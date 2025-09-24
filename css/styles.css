@@ -88,6 +88,17 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* Força estilos específicos para sobrescrever Bootstrap */
+.hero-image .carousel-inner .carousel-item img.img-fluid {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+    max-height: 600px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    aspect-ratio: 16/9 !important;
+}
+
 .hero-image .carousel-inner {
     border-radius: 16px;
     overflow: hidden;
@@ -99,12 +110,15 @@ body {
 }
 
 .hero-image .carousel-item img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    object-position: center;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+    max-height: 600px !important;
+    object-fit: cover !important;
+    object-position: center !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: brightness(0.95) contrast(1.05);
+    aspect-ratio: 16/9 !important;
 }
 
 .hero-image .carousel-item:hover img {
@@ -197,9 +211,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero-image .carousel-item img {
-        height: 400px;
-        object-fit: cover;
+    .hero-image .carousel-item img,
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 350px !important;
+        max-height: 500px !important;
+        aspect-ratio: 4/3 !important;
     }
 
     .hero-image .carousel-control-prev,
@@ -224,9 +240,11 @@ body {
 }
 
 @media (max-width: 576px) {
-    .hero-image .carousel-item img {
-        height: 350px;
-        object-fit: cover;
+    .hero-image .carousel-item img,
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 300px !important;
+        max-height: 400px !important;
+        aspect-ratio: 1/1 !important;
     }
 
     .hero-image .carousel-control-prev,
@@ -251,9 +269,11 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-image .carousel-item img {
-        height: 300px;
-        object-fit: cover;
+    .hero-image .carousel-item img,
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 250px !important;
+        max-height: 350px !important;
+        aspect-ratio: 1/1 !important;
     }
 
     .hero-image .carousel-control-prev,
@@ -818,6 +838,17 @@ body {
 
 /* Responsive */
 /* Responsividade Melhorada */
+
+/* Telas grandes - altura otimizada para desktop */
+@media (min-width: 1200px) {
+    .hero-image .carousel-item img,
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 500px !important;
+        max-height: 700px !important;
+        aspect-ratio: 16/10 !important;
+    }
+}
+
 @media (max-width: 1200px) {
     .hero-title {
         font-size: 3rem;
@@ -834,6 +865,13 @@ body {
 }
 
 @media (max-width: 992px) {
+    .hero-image .carousel-item img,
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 400px !important;
+        max-height: 550px !important;
+        aspect-ratio: 16/9 !important;
+    }
+
     .hero-title {
         font-size: 2.8rem;
     }
@@ -1859,5 +1897,58 @@ body {
 
     .whatsapp-btn i {
         font-size: 1.1rem;
+    }
+}
+
+/* FORÇA ESTILOS DO CARROSSEL - SOBRESCREVE BOOTSTRAP */
+.hero-image .carousel-inner .carousel-item img.img-fluid {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+    max-height: 600px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    aspect-ratio: 16/9 !important;
+    display: block !important;
+}
+
+/* Media queries específicas para sobrescrever Bootstrap */
+@media (min-width: 1200px) {
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 500px !important;
+        max-height: 700px !important;
+        aspect-ratio: 16/10 !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 400px !important;
+        max-height: 550px !important;
+        aspect-ratio: 16/9 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 350px !important;
+        max-height: 500px !important;
+        aspect-ratio: 4/3 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 300px !important;
+        max-height: 400px !important;
+        aspect-ratio: 1/1 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image .carousel-inner .carousel-item img.img-fluid {
+        min-height: 250px !important;
+        max-height: 350px !important;
+        aspect-ratio: 1/1 !important;
     }
 }

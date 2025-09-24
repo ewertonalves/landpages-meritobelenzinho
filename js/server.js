@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
     let filePath = '.' + req.url;
 
     if (filePath === './') {
-        filePath = './landing-page-apartamento.html';
+        filePath = './index.html';
     }
 
     fs.access(filePath, fs.constants.F_OK, (err) => {
@@ -68,7 +68,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    console.log(`📄 Acesse: http://localhost:${PORT}/landing-page-apartamento.html`);
+    console.log(`📄 Acesse: http://localhost:${PORT}/index.html`);
     console.log(`🛑 Para parar o servidor, pressione Ctrl+C`);
 });
 
